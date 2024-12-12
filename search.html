@@ -1,0 +1,24 @@
+
+<head>
+    <meta name="google-signin-client_id" content="451192574178-pjhm1gip8vkr7r357kcv87op97hf7vd7.apps.googleusercontent.com">
+    
+    <!-- Widget JavaScript bundle -->
+    <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=en_US"></script>
+  
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  
+    <!-- Search widget element is not visible by default -->
+    <gen-search-widget
+      configId="81646404-d15c-46ef-99e4-9fe02be16d0e"
+      triggerId="searchWidgetTrigger">
+    </gen-search-widget>
+    <script>
+      // Set authorization token.
+      // const searchWidget = document.querySelector('gen-search-widget');
+      // searchWidget.authToken = "<JWT or OAuth token provided by your backend>";
+    </script>
+  </head>
+  <body>
+    <!-- Element that opens the widget on click. It does not have to be an input -->
+    <input placeholder="Search here" id="searchWidgetTrigger" />
+  </body>

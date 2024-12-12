@@ -1,0 +1,36 @@
+<!--
+  Helpers:
+  1. https://developer.chrome.com/blog/web-apps-that-talk-introduction-to-the-speech-synthesis-api?hl=zh-tw
+  2. https://gist.github.com/Eotones/d67be7262856a79a77abeeccef455ebf
+  3. https://mdn.github.io/dom-examples/web-speech-api/speak-easy-synthesis/
+
+  語音庫列表依照瀏覽器支援不同，只有很少數的是相同的，例如 Linh (vi-VN)，Chrome 的語音庫都不包含 Microsoft 為首的
+-->
+<script type="text/javascript">
+  function speak() {
+    var msg = new SpeechSynthesisUtterance();
+    var voices = window.speechSynthesis.getVoices();
+    for (var i = 0; i< voices.length; i++){
+      if(voices[i].lang == "vi-VN") {
+        console.log(voices[i])
+      } 
+
+      if(voices[i].lang == "zh-TW") {
+        console.log(voices[i])
+      }
+    }
+
+    msg.lang = "vi-VN"
+    msg.text = "Xin chào các bạn! Tôi là Pu.";
+    
+
+    msg.onend = function(e) {
+        console.log('Finished in ' + event.elapsedTime + ' seconds.');
+    };
+
+    speechSynthesis.speak(msg);
+  }
+</script>
+<body>
+  <button class="favorite styled" type="button" onclick="speak()">Speak</button>
+</body>
